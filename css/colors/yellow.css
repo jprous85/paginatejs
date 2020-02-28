@@ -1,0 +1,33 @@
+/*
+Yellow Color
+*/
+.yellow{
+    background: #f1e767;
+    color: #303030 !important;
+}
+.yellow:hover{
+    background: #fcde46;
+}
+.yellow_gradient {
+    background: #f1e767;
+    background: -moz-linear-gradient(top, #f1e767 0%, #fcde46 100%);
+    background: -webkit-linear-gradient(top, #f1e767 0%, #fcde46 100%);
+    background: -o-linear-gradient(top, #f1e767 0%, #fcde46 100%);
+    background: -ms-linear-gradient(top, #f1e767 0%, #fcde46 100%);
+    background: linear-gradient(to bottom, #f1e767 0%, #fcde46 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#fcde46', GradientType=0 );color: #303030 !important;
+}
+
+.yellow_gradient:hover {
+    background: #fcde46;
+    background: -moz-linear-gradient(top, #fcde46 0%, #f1e767 100%);
+    background: -webkit-linear-gradient(top, #fcde46 0%, #f1e767 100%);
+    background: -o-linear-gradient(top, #fcde46 0%, #f1e767 100%);
+    background: -ms-linear-gradient(top, #fcde46 0%, #f1e767 100%);
+    background: linear-gradient(to bottom, #fcde46 0%, #f1e767 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcde46', endColorstr='#f1e767', GradientType=0 );
+}
+
+.border_input_yellow {
+    border: 1px solid #fcde46;
+}

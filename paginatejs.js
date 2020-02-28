@@ -3,7 +3,7 @@
     let pages = null;
     let arr = [];
 
-    let _buttons_color = {
+    const _buttons_color = {
         "blue": "blue",
         "red": "red",
         "orange": "orange",
@@ -11,7 +11,7 @@
         "yellow": "yellow"
     };
 
-    let _align_buttons = {
+    const _align_buttons = {
         "left": "paginate_left",
         "center": "paginate_center",
         "right": "paginate_right",
@@ -20,7 +20,7 @@
     let default_colors = {
         "gradient": false,
         "animation": false,
-        "color": _buttons_color.yellow
+        "color": _buttons_color.blue
     };
 
     let config_page = {
@@ -30,7 +30,7 @@
         "items_in_page": 10,
         "buttons_next_previous": true,
         "buttons_first_last": true,
-        "input_between": true,
+        "input_between": false,
         "num_middle_buttons": 2,
         "align_buttons": _align_buttons.center,
     };
@@ -50,6 +50,7 @@
     function _createButtons() {
         let buttons = [];
         let div = document.createElement('div');
+        div.classList.add('alignment_'+config_page.align_buttons);
         if (config_page.buttons_first_last) {
             buttons.push(createLinks(configuration.language.first, 'first'));
         }
@@ -97,10 +98,12 @@
         pages = Math.ceil(config_page.total_items / config_page.items_in_page);
         arr = Array.prototype.slice.call(total_items);
         logicPaginate(total_items);
+        if (config_page.total_items > config_page.items_in_page) {
+            _createButtons();
+        }
     }
 
     init();
-    _createButtons();
 
     function createLinks(name, type) {
         let style = configuration.buttons_style.color;
@@ -122,6 +125,7 @@
     function createInput() {
         let i = document.createElement('input');
         i.classList.add('paginate_input');
+        i.classList.add('border_input_'+configuration.buttons_style.color)
         i.addEventListener('keyup', (e)=>{
             changePage(e.target.value, 'input');
         });

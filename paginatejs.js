@@ -84,7 +84,7 @@
         config_page.total_pages = pages;
         arr.map((i, j) => {
 
-            if (j >= config_page.current_page * 10 - 10 && j <= config_page.current_page * 10 - 1) {
+            if (j >= config_page.current_page * config_page.items_in_page - config_page.items_in_page && j <= config_page.current_page * config_page.items_in_page - 1) {
                 i.style.display = 'block';
             } else {
                 i.style.display = 'none';
